@@ -27,6 +27,7 @@ body {
     color: whitesmoke;
 }
 
-.crystal-image{
-
+#crystal1, #crystal2, #crystal3, #crystal4{
+    height:222px;
+    width:222px;
 }
