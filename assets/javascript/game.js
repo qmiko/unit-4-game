@@ -4,7 +4,7 @@ var numberOptions = [4, 3, 9, 11];
 
 for (var i = 0; i < numberOptions.length; i++){
     var imageCrystal1 = $("crystal1");
-};
+}
 
 $("#crystal1").on("click", function(){
 
@@ -24,4 +24,52 @@ $("#crystal1").on("click", function(){
 
     }
 
-});
+})
+
+$("#crystal2").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalValue"));
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+
+    alert("New Score" + counter);
+
+    if(counter === targetNumber){
+        alert("You Win!");
+    }
+
+    else if(counter >= targetNumber){
+        alert("You lose");
+    }
+})
+
+$("#crystal3").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalValue"));
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+
+    alert("New Score" + counter);
+
+    if(counter === targetNumber){
+        alert("You Win!");
+    }
+
+    else if(counter >= targetNumber){
+        alert("You lose");
+    }
+})
+
+$("#crystal4").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalValue"));
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+
+    alert("New Score" + counter);
+
+    if(counter === targetNumber){
+        alert("You Win!");
+    }
+
+    else if(counter >= targetNumber){
+        alert("You lose");
+    }
+})
