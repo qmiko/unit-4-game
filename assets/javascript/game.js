@@ -3,14 +3,10 @@ var counter = 0;
 var numberOptions = [4, 3, 9, 11];
 
 for (var i = 0; i < numberOptions.length; i++){
-
-    var imageCrystal = $("<img>");
-    //HELP! how to source image thru machine? w da query
-    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
+    var imageCrystal1 = $("crystal1");
 };
 
-$("crystal-image").click(function(){
+$("#crystal1").on("click", function(){
 
     var crystalValue = ($(this).attr("data-crystalValue"));
     crystalValue = parseInt(crystalValue);
@@ -29,4 +25,3 @@ $("crystal-image").click(function(){
     }
 
 });
-
