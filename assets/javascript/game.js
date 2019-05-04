@@ -1,25 +1,51 @@
 $(document).ready(function () {
 
-    var targetNumber = [];
+    var targetNumber = 77;
     var counter = 0;
     var numberOptions = [4, 3, 9, 11];
     var imageUrls = ["assets/images/bluecrystal.jpg", "assets/images/indigocrystal.jpg", "assets/images/redcrystal.jpg", "assets/images/whitecrystal.jpg"]
     var imageCrystal
-    var imageObject = {"assets/images/bluecrystal.jpg": 4, "assets/images/indigocrystal.jpg": 3, "assets/images/redcrystal.jpg": 9, "assets/images/whitecrystal.jpg": 11}
-    console.log(imageObject)
+    // console.log(imageObject)
 
 
     for (var i = 0; i < imageUrls.length; i++) {
         imageCrystal = $("<img>");
         imageCrystal.attr("src", imageUrls[i]);
+        imageCrystal.attr("data-crystalvalue", numberOptions[i]);
         console.log(imageUrls[i])
         imageCrystal.addClass("crystal-image");
         $("#crystals").append(imageCrystal);
         console.log(imageCrystal)
     }
 
-    $(imageObject).innerHTML
+    // $(imageObject).innerHTML
+
+
+    $(".crystal-image").on("click" ,function(){
+        var crystalValue = ($(this).attr("data-crystalvalue"));
+        crystalValue = parseInt(crystalValue);
+        counter += crystalValue;
+        console.log(crystalValue)
+
+        alert("New score: " + counter);
+
+        if (counter === targetNumber) {
+          alert("You win!");
+        }
+    
+        else if (counter >= targetNumber) {
+          alert("You lose!!");
+        }
+        
+
+    })
+
+
+  
+    
 })
+
+
 
 
 
