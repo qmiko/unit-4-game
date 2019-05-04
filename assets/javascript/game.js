@@ -27,6 +27,8 @@ $(document).ready(function () {
         counter += crystalValue;
         console.log(crystalValue)
 
+        $("#total").text(counter)
+
         alert("New score: " + counter);
 
         if (counter === targetNumber) {
