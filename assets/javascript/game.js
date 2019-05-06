@@ -29,10 +29,9 @@ $(document).ready(function () {
 
         $("#total").text(counter)
 
-        alert("New score: " + counter);
-
         if (counter === targetNumber) {
           alert("You win!");
+          $("#wins").text("You Win")
         }
     
         else if (counter >= targetNumber) {
