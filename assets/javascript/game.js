@@ -5,6 +5,9 @@ $(document).ready(function () {
     var numberOptions = [4, 3, 9, 11];
     var imageUrls = ["assets/images/bluecrystal.jpg", "assets/images/indigocrystal.jpg", "assets/images/redcrystal.jpg", "assets/images/whitecrystal.jpg"]
     var imageCrystal
+    var wins
+    var losses
+
     // console.log(imageObject)
 
 
@@ -22,22 +25,28 @@ $(document).ready(function () {
 
 
     $(".crystal-image").on("click" ,function(){
+
         var crystalValue = ($(this).attr("data-crystalvalue"));
         crystalValue = parseInt(crystalValue);
         counter += crystalValue;
         console.log(crystalValue)
 
         $("#total").text(counter)
-
+      //variable to track wins and losses. present to user 
         if (counter === targetNumber) {
-          alert("You win!");
-          $("#wins").text("You Win")
+          // alert("You win!");
+          var wins = ($(this).attr("data-wins"));
+          wins = parseInt(wins);
+          $("#wins").text("You Win");
         }
     
         else if (counter >= targetNumber) {
           alert("You lose!!");
         }
+
+
         
+
 
     })
 
