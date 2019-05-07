@@ -34,14 +34,15 @@ $(document).ready(function () {
         $("#total").text(counter)
       //variable to track wins and losses. present to user 
         if (counter === targetNumber) {
-          // alert("You win!");
           var wins = ($(this).attr("data-wins"));
           wins = parseInt(wins);
           $("#wins").text("You Win");
         }
     
         else if (counter >= targetNumber) {
-          alert("You lose!!");
+          var losses = ($(this).attr("data-losses"));
+          losses = parseInt(losses);
+          $("#losses").text("You Lose")
         }
 
 
