@@ -5,11 +5,19 @@ $(document).ready(function () {
     var numberOptions = [4, 3, 9, 11];
     var imageUrls = ["assets/images/bluecrystal.jpg", "assets/images/indigocrystal.jpg", "assets/images/redcrystal.jpg", "assets/images/whitecrystal.jpg"]
     var imageCrystal
-    var wins
-    var losses
+    var wins = 0;
+    var losses = 0;
+      
 
+    var resetGame = function(){
+      counter = 0;
+      targetNumber = Math.floor(Math.random()*77);
+      $("#total").text(counter)
+      $("#target").text(targetNumber);
+      console.log(targetNumber);
+    }
+    resetGame();
     // console.log(imageObject)
-
 
     for (var i = 0; i < imageUrls.length; i++) {
         imageCrystal = $("<img>");
@@ -34,26 +42,24 @@ $(document).ready(function () {
         $("#total").text(counter)
       //variable to track wins and losses. present to user 
         if (counter === targetNumber) {
-          var wins = ($(this).attr("data-wins"));
           wins = parseInt(wins);
-          $("#wins").text("You Win");
+          wins++;
+
+          $("#wins").text(wins);
+          $("#messages").text("You Win");
+          resetGame();
         }
     
         else if (counter >= targetNumber) {
-          var losses = ($(this).attr("data-losses"));
           losses = parseInt(losses);
-          $("#losses").text("You Lose")
+          losses++;
+          $("#losses").text(losses);
+          $("#messages").text("You Lose by going over by " + Math.abs(targetNumber-counter) +" points")
+          resetGame();
+
         }
 
-
-        
-
-
-    })
-
-
-  
-    
+    })    
 })
 
 
